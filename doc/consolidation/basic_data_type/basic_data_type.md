@@ -225,7 +225,7 @@ IEEE二进制浮点数算术标准（IEEE 754）是20世纪80年代以来最广�
 1.除数和被除数均为整型
 
 ```java
-public class text {
+public class Test {
     public static void main(String[] args) {
         int a =1 ;
         int b = 0;
@@ -248,7 +248,7 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 2.除数或被除数为浮点型
 
 ```java
-public class text {
+public class Test {
     public static void main(String[] args) {
         double t = 1 / 0.0;
         System.out.println(t);
@@ -284,7 +284,7 @@ Infinity 中译:	无穷，无限
 3.强制转换
 
 ```java
-public class text {
+public class Test {
     public static void main(String[] args) {
         double t = (int)(8 / 0.0);
         System.out.println(t);
@@ -301,7 +301,7 @@ public class text {
 4.被除数和除数均为0.0（0.0 / 0.0）
 
 ```java
-public class text {
+public class Test {
     public static void main(String[] args) {
         System.out.println(0.0 / 0.0);
         System.out.println(Math.sqrt(-8));
