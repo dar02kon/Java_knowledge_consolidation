@@ -11,3 +11,5 @@
 ## （4）[数组与字符串](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/consolidation/arrays_and_strings/arrays_and_strings.md)
 
 ## （5）[Java集合（上）](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/consolidation/java_collections/java_collections_1.md)
+
+## （6）[Java集合（中）](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/consolidation/java_collections/java_collections_2.md)
