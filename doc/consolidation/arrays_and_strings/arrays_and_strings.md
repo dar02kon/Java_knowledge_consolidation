@@ -14,7 +14,7 @@ int a[];
 
 这个时候我们仅仅拥有指向数组的一个句柄，而且尚未给数组分配任何空间。为了给数组创建相应的存储空间，必须编写一个初始化表达式。在没有初始化前数组是不允许使用的。
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-30_20-40-07.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-30_20-40-07.png)
 
 ```java
 int[] a = { 1, 2, 3, 4, 5 };//清楚数组元素
@@ -90,7 +90,7 @@ int[] b = a;
 
 所有的局部变量都保存在栈内存（Java 虚拟机栈）中，不管是基本类型还是引用类型，局部变量都保存在各自的栈帧中的局部变量表。
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-30_21-39-21.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-30_21-39-21.png)
 
 **多维数组在内存中也是一维数组，只不过一维数组元素保存的是另一个一维数组的引用。**
 
@@ -137,7 +137,7 @@ collection这一集合表达式必须是一个数组或者实现Iterable接口�
 
 对于数组而言，使用增强for循环后反编译class文件发现它还是使用简单的for循环进行遍历
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-31_09-29-03.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-31_09-29-03.png)
 
 **Arrays.toString()**
 
@@ -881,13 +881,13 @@ StringBuilder类是JDK1.5新增的一个类，与StringBuffer基本相同，它�
 Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared.
 ```
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-31_21-11-54.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-31_21-11-54.png)
 
 String确实是使用字符数组来进行存储的（至少JDK8是这样的，Java9字符串采用byte[]数组再加一个encoding-flag字段来保存字符），而且类和属性还用final来修饰以达到不可变。
 
 新版的 String 其实支持两个编码方案： Latin-1 和 UTF-16。如果字符串中包含的汉字没有超过 Latin-1 可表示范围内的字符，那就会使用 Latin-1 作为编码方案。Latin-1 编码方案下，`byte` 占一个字节(8 位)，`char` 占用 2 个字节（16），`byte` 相较 `char` 节省一半的内存空间。JDK 官方就说了绝大部分字符串对象只包含 Latin-1 可表示的字符。如果字符串中包含的汉字超过 Latin-1 可表示范围内的字符，`byte` 和 `char` 所占用的空间是一样的。（官方的介绍：https://openjdk.java.net/jeps/254 ）
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-31_21-20-57.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-31_21-20-57.png)
 
 String 为什么不能被修改？
 
@@ -925,7 +925,7 @@ public class StringTest2 {
 }
 ```
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-31_22-09-13.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-31_22-09-13.png)
 
 - `0: new`，在堆上创建一个String对象，并将它的引用压入操作数栈，注意这时的对象还只是一个空壳，并没有调用类的构造方法进行初始化
 - `3: dup`，复制栈顶元素，也就是复制了上面的对象引用，并将复制后的对象引用压入栈顶。这里之所以要进行复制，是因为之后要执行的构造方法会从操作数栈弹出需要的参数和这个对象引用本身（这个引用起到的作用就是构造方法中的`this`指针），如果不进行复制，在弹出后会无法得到初始化后的对象引用
@@ -936,7 +936,7 @@ public class StringTest2 {
 
 注：本地变量（局部变量）的赋值好像都是从第二个开始，比我们想象的多一个，不要忘记在主函数中会传入一个变量`args`
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_09-56-37.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_09-56-37.png)
 
 字符串常量池不存在"Java"引用编译后的部分字节码如下：
 
@@ -949,7 +949,7 @@ public class StringTest2 {
 }
 ```
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-10-31_22-21-06.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-10-31_22-21-06.png)
 
 - `0: ldc`，查找后面索引为`#2`对应的项，`#2`表示常量在常量池中的位置。在这个过程中，会触发**lazy resolve**，在resolve过程如果发现`StringTable`已经有了内容匹配的String引用，则直接返回这个引用，反之如果`StringTable`里没有内容匹配的String对象的引用，则会在堆里创建一个对应内容的String对象，然后在`StringTable`驻留这个对象引用，并返回这个引用，之后再压入操作数栈中
 - `2: astore_1`，弹出栈顶元素，并将栈顶引用类型值保存到第二个本地变量中，也就是保存到变量`s1`中
@@ -962,7 +962,7 @@ public class StringTest2 {
 
 #### String.intern()方法
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_15-02-44.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_15-02-44.png)
 
 `String.intern()` 是一个 native（本地）方法，其作用是将指定的字符串对象的引用保存在字符串常量池中，可以简单分为两种情况：
 
@@ -1056,9 +1056,9 @@ s = s+"";
 
 我们来看看字节码文件和反编译后的字节码文件
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_10-14-50.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_10-14-50.png)
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_10-16-50.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_10-16-50.png)
 
 源代码中字符串拼接的操作，在编译完成后会消失，直接呈现为一个拼接后的完整字符串，是因为在编译期间，应用了编译器优化中一种被称为**常量折叠**(Constant Folding)的技术。
 
@@ -1108,7 +1108,7 @@ public class StringTest3 {//反编译后的class文件
 
 什么是常量表达式”这个问题，这个可以参考 Oracle 的官方文档：[在15.28 小节那里](https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html )
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_10-27-23.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_10-27-23.png)
 
 列举一些：
 
@@ -1181,13 +1181,13 @@ public class StringBuilderTest1 {
 
 StringBuilder继承AbstractStringBuilder，在构造函数中会先调用父类的构造函数，当我们使用`new StringBuilder()`来创建一个StringBuilder对象时，它会通过调用父类的构造函数即`super(16)`创建一个默认容量为16字节的数组
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_10-55-32.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_10-55-32.png)
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_11-01-12.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_11-01-12.png)
 
 当我们使用`stringBuilder.length()`获取长度时返回的不是数组的长度而是数组的元素个数
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_11-02-36.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_11-02-36.png)
 
 在父类中使用变量count来进行计数
 
@@ -1278,7 +1278,7 @@ StringBuilder与String一样都是使用字符数组来存储字符串中的字�
 
 同时我们在阅读StringBuilder源码的时候，并没有发现`synchronized`之类与线程安全有关的代码，而在StringBuffer中能到处都是`synchronized`，这也验证了前面所说的：`StringBuilder` 为非线程安全的，而 `StringBuffer` 是线程安全的。
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_14-40-37.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_14-40-37.png)
 
 #### 一些问题
 
@@ -1304,11 +1304,11 @@ StringBuilder与String一样都是使用字符数组来存储字符串中的字�
 
 理由上面已经提到过，并且使用一些集成开发工具（如IDEA），在使用`+`来拼接字符串时会给出一些提醒
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_14-49-05.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_14-49-05.png)
 
 同样，如果确定字符串基本不变也没有必要使用`StringBuilder` 或者`StringBuffer`，String肯定是最理想的实现方式，同样IDEA也会给出提醒
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_14-51-52.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_14-51-52.png)
 
 #### 2.善用 intern 方法 
 
@@ -1570,7 +1570,7 @@ public class StringApiTest3 {
 
 最后调用的是`Matcher`类中的`replaceAll()`方法，使用`StringBuffer`来进行字符串的拼接
 
-![](http://rj5qpfcaf.hn-bkt.clouddn.com/java_consolidation/Snipaste_2022-11-01_17-12-32.png)
+![](https://dar-1305869431.cos.ap-shanghai.myqcloud.com/java_note/arrays_string/Snipaste_2022-11-01_17-12-32.png)
 
 #### 字符串拼接
 
