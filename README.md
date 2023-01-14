@@ -15,3 +15,17 @@
 ## （6）[Java集合（中）](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/consolidation/java_collections/java_collections_2.md)
 
 ## （7）[Java集合（下）](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/consolidation/java_collections/java_collections_3.md)
+
+# 面试必背
+
+大部分内容摘自 [JavaGuide](https://javaguide.cn/)，Java编程思想第四版，Java并发编程的艺术，深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）
+
+## （1）[Java基础](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/Interview_essentials/Java%E5%9F%BA%E7%A1%80.md)
+
+## （2）[Java集合](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/Interview_essentials/Java%20%E9%9B%86%E5%90%88.md)
+
+## （3）[Java IO](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/Interview_essentials/Java%20IO.md)
+
+## （4）[Java并发](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/Interview_essentials/Java%20%E5%B9%B6%E5%8F%91.md)
+
+## （5）[JVM](https://github.com/dar02kon/Java_knowledge_consolidation/blob/master/doc/Interview_essentials/JVM.md)
